@@ -47,14 +47,13 @@ class Captcha{
   //   $stringgenerator=new stringGenerator($chars,$length,$strength,$secure);
   //   $backgroundgenerator=new backgroundGenerator($width,$height);
   // }
-
-  public function getCaptcha(){
+  public function generate(){
     /***First job is to get the image and the string ***/
     $this->rand_string=$this->stringgenerator->generateString();
     $this->image=$this->backgroundgenerator->generateBackground();
     //Debug Purpose
     //echo $this->rand_string;
-
+    //get the font randomly
     $font=__DIR__ . '/fonts/font'.random_int(1,4).'.ttf';
     //Set your colors as below
     $color1=imagecolorallocate($this->image,0,0,0);#black
@@ -64,18 +63,38 @@ class Captcha{
     $color5=imagecolorallocate($this->image,255,255,255);#white
     $textColors=[$color1,$color2,$color3,$color4,$color5];
     $len=$this->stringgenerator->getLength();
-
+    //putting text randomly over image
     for($i=0;$i<$len;$i++){
       $letter_space=160/$len;//here 180 is the left over space
       $init=16;//padding on the both sides
       imagettftext($this->image,mt_rand(25,30),mt_rand(-15,10),$init+$i*$letter_space,mt_rand(30,40),$textColors[mt_rand(0,4)],$font,$this->rand_string[$i]);
       //imagettftext($image,$font_size,0,6,25,$foreground,$font_path,$captchanumber);
     }
-    return $this->image;
+    return $this;
   }
-
+  //Function to get captcha as Image format
+  //Captcha image in Jpeg format
+  public function getJpegCaptcha(){
+    imagejpeg($this->image);
+  }
+  //Captcha image in png format
+  public function getPngCaptcha(){
+    imagepng($this->image);
+  }
+  //function to get the byte data of the image
+  private function getData(){
+    ob_start();
+    $this->getJpegCaptcha();//default and I prefer for low byte generation
+    return ob_get_clean();
+  }
+  // Function to get the generated String set
   public function getRandomString(){
     return $this->rand_string;
+  }
+
+  // Function to get the image as data Stream
+  public function getImageData(){
+    return 'data:image/jpeg;base64,' . base64_encode($this->getData());
   }
 }
 ?>
