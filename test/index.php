@@ -1,7 +1,4 @@
 <?php
-/**
- * Methods when needed to pass generated image to a web page then uncomment
- **/
 require __DIR__ .'/../vendor/autoload.php';
 
 use src\Captcha;
