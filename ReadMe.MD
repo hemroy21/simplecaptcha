@@ -1,3 +1,4 @@
+# simplecaptcha
 PHP based simple captcha package for quick implementation in php based web applcation.
 
 Installation
