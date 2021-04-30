@@ -1,5 +1,5 @@
 {
- "name":"hemroy/simple_captcha",
+ "name":"HemRoy2021/simple_captcha",
  "type": "php-captcha",
   "description": "php captcha generator",
   "keywords": ["php", "captcha","spam"],
