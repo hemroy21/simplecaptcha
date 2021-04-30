@@ -3,7 +3,7 @@ PHP based simple captcha package for quick implementation in php based web applc
 Installation
 Composer Installation:
 ______________________________________
-composer require hemroy/simple_captcha
+composer require hemroy/simplecaptcha
 ``````````````````````````````````````
 
 Usage
