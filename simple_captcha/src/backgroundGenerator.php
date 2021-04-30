@@ -49,9 +49,6 @@ class backgroundGenerator{
       $rect_color=$colors[rand(1,4)];
       imagerectangle($this->image,rand(-10,190),rand(-10,10),rand(-10,190),rand(40,60), $rect_color);
     }
-
-
-
     return $this->image;
   }
 }
