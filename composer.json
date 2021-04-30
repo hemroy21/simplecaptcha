@@ -1,17 +1,16 @@
 {
- "name":"HemRoy2021/simple_captcha",
+ "name":"hemroy/simplecaptcha",
  "type": "php-captcha",
   "description": "php captcha generator",
   "keywords": ["php", "captcha","spam"],
-  "license":"Creative Commons",
-  "version": "1.0",
+  "license":"MIT",
   "authors": [
     {
     "name": "Hem Roy",
     "email": "roy.hem@rediff.com"
     }
   ],
-
+  
   "require": {
       "php": ">=5.3.0",
       "ext-gd": "*",
