@@ -11,7 +11,7 @@ class stringGenerator{
   /**Whether Secure Random String is needed to create, better to use it always*/
   protected $secure=true;
   /**Level to strengthening genarated String*/
-  protected $strength=5;
+  protected $strength=0;
   /* Default Constructor*/
   // public function __construct(){}
   /*Constructor to assign with custom requirements*/

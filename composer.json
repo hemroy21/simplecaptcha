@@ -4,7 +4,7 @@
   "description": "php captcha generator",
   "keywords": ["php", "captcha","spam"],
   "license":"Creative Commons",
-  "version": "0.1",
+  "version": "1.0",
   "authors": [
     {
     "name": "Hem Roy",
